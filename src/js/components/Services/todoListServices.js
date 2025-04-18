@@ -14,7 +14,6 @@ export const getUser = async (userName) => {
         return response.todos
     } catch (error) {
         console.log(error);
-
     }
 }
 
