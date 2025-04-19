@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { createTodo, getUser, readUser, deleteTask, updateTask } from './Services/todoListServices';
-import { unstable_renderSubtreeIntoContainer, useFormStatus } from 'react-dom';
-import { use } from 'react';
 
 function TodoList() {
     const [tasks, setTasks] = useState([]);
@@ -18,8 +16,10 @@ function TodoList() {
         try {
             const listTodos = await readUser("Eduardo")
             console.log(listTodos);
+            if (listTodos) {
 
-            setTasks(listTodos)
+                setTasks(listTodos)
+            }
         } catch (error) {
             console.log(error);
 
@@ -48,7 +48,6 @@ function TodoList() {
             }
         }
     }
-
 
     const handleDeleteTask = async (todoId) => {        // Esta funcion es para eliminar tasks 
         try {

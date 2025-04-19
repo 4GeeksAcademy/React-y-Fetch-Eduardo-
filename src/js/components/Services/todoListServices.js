@@ -30,7 +30,15 @@ export const readUser = async (userName) => {
     }
 }
 
+export const createUser = async () => {
+    try {
+        const request = await fetch(`${baseUrlUsers}Eduardo`, { method: "POST" });
+        const response = await request.json()
+    } catch (error) {
+        console.log(error);
 
+    }
+}
 
 export const createTodo = async (userName, task) => {
     try {
